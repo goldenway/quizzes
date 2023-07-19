@@ -1,0 +1,11 @@
+<div class="container">
+  <h5 style="margin: 15px 0;">{{ quiz.name }}</h5>
+
+  <q-quiz-question
+    [questionsCount]="quiz.questionsCount"
+    [question]="questionText"
+    [answers]="questionAnswers"
+    [isLastQuestion]="isLastQuestion"
+    (answerSubmitted)="onAnswerSubmitted($event)">
+  </q-quiz-question>
+</div>

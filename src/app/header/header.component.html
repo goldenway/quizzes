@@ -1,0 +1,35 @@
+<nav class="navbar navbar-light">
+  <div class="container" style="max-width: 760px;">
+
+    <a *ngIf="!isPlaying" class="navbar-brand" (click)="onMainClick()" style="cursor: pointer;">Quizzes App</a>
+    <a *ngIf="isPlaying" class="navbar-brand" data-toggle="modal" data-target="#goToMainModal" style="cursor: pointer;">Quizzes App</a>
+
+    <ul class="navbar-nav">
+      <li>
+        <a *ngIf="!isPlaying" (click)="onStatsClick()" style="cursor: pointer;">Statistics</a>
+        <a *ngIf="isPlaying" data-toggle="modal" data-target="#goToStatsModal" style="cursor: pointer;">Statistics</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- goToMain modal window -->
+<q-modal-window
+  [modalId]="'goToMainModal'"
+  [title]="'Quit Confirmation'"
+  [description]="'Are you sure you want to quit the quiz and navigate to the Main page?'"
+  [cancelBtnText]="'Cancel'"
+  [okBtnText]="'Quit'"
+  (okButtonClicked)="onMainClick()">
+</q-modal-window>
+
+<!-- goToStats modal window -->
+<q-modal-window
+  [modalId]="'goToStatsModal'"
+  [title]="'Quit Confirmation'"
+  [description]="'Are you sure you want to quit the quiz and view statistics?'"
+  [cancelBtnText]="'Cancel'"
+  [okBtnText]="'Quit'"
+  (okButtonClicked)="onStatsClick()">
+</q-modal-window>

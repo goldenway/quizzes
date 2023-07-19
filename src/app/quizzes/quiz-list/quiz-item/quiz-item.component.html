@@ -1,0 +1,11 @@
+<!-- quiz with no data from server -->
+<div *ngIf="!quiz.questionsCount" class="list-group-item rounded">
+  <p class="list-group-item-text" style="font-style: italic; margin-bottom: 0;">This quiz has no data</p>
+</div>
+
+<!-- quiz with a data -->
+<div *ngIf="quiz.questionsCount" class="list-group-item rounded">
+  <h5 class="list-group-item-heading">{{ quiz.name }}</h5>
+  <button class="btn btn-success"  (click)="quizSelected()">Play</button>
+  <span class="badge badge-light">{{ quiz.questionsCount }} questions</span>
+</div>

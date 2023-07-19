@@ -1,0 +1,36 @@
+<!-- progress bar -->
+<div class="progress">
+  <div #progressBar class="progress-bar bg-success" role="progressbar"></div>
+</div>
+
+<div *ngIf="!answers">
+  <p>This quiz has no data. Please select another one.</p>
+</div>
+
+<div *ngIf="answers">
+  <p>Question {{ index + 1 }} of {{ questionsCount }}</p>
+  <p><strong>{{ question }}</strong></p>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div *ngFor="let answer of answers">
+      <label>
+        <input type="radio" name="input" [value]="answer" [(ngModel)]="selectedRadioValue" required>
+        {{ answer }}
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!f.valid">{{ submitButtonName }}</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#quitModal">Quit</button>
+  </form>
+
+</div>
+
+<!-- modal window -->
+<q-modal-window
+  [modalId]="'quitModal'"
+  [title]="'Quit Confirmation'"
+  [description]="'Are you sure you want to quit the quiz?'"
+  [cancelBtnText]="'Cancel'"
+  [okBtnText]="'Quit'"
+  (okButtonClicked)="onQuit()">
+</q-modal-window>

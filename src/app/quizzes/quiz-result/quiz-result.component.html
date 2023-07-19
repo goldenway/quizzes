@@ -1,0 +1,11 @@
+<div class="container">
+  <h5 style="margin: 15px 0;">Score: {{ score }} points</h5>
+  <h5 style="margin-bottom: 15px;">{{ description }}</h5>
+  <p>Your result is {{ result.correctAnswers }} / {{ result.totalAnswers }} answers</p>
+  <p>Total time: {{ time }}</p>
+  <p>Min answer time: {{ minTime }}</p>
+  <p>Max answer time: {{ maxTime }}</p>
+
+  <button class="btn btn-success" (click)="navigateToList()">Play Again</button>
+  <button class="btn btn-success" (click)="navigateToStats()">Statistics</button>
+</div>

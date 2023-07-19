@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  min-width: 270px;
+}
+
+.navbar {
+  background-color: #ccc;
+  font-weight: bold;
+}
+
+button {
+  margin: 0 3px;
+}
+
+.list-group-item {
+  margin-bottom: 8px;
+}
+
+.progress {
+  height: 3px;
+  margin-bottom: 15px;
+}
+
+.badge {
+  margin-left: 12px;
+}

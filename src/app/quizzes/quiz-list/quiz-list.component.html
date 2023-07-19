@@ -1,0 +1,21 @@
+<div *ngIf="isLoading" class="container" style="text-align: center; margin-top: 15px; font-style: italic;">
+  <p>Loading quizzes ...</p>
+  <q-loading-spinner></q-loading-spinner>
+</div>
+
+<div *ngIf="!isLoading" class="container">
+  <h6 style="margin: 15px 0;">Please select the quiz category</h6>
+
+  <!-- random quiz button -->
+  <div class="list-group-item rounded" style="background-color: #f0f0f0;">
+    <h5 class="list-group-item-heading">Random category</h5>
+    <button class="btn btn-success" (click)="randomQuizSelected()">I'm lucky</button>
+  </div>
+
+  <!-- list of quizzes -->
+  <q-quiz-item
+    *ngFor="let quizItem of quizzes; let i = index"
+    [quiz]="quizItem"
+    [quizIndex]="i">
+  </q-quiz-item>
+</div>
