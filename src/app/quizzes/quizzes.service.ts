@@ -5,6 +5,7 @@ import { Observable, Subject, Subscription, map } from 'rxjs';
 
 import { IResult, IQuestion, IQuiz, IResponse } from "./quizzes.model";
 import { SharedService } from "../shared/shared.service";
+import { environment } from "src/environments/environment.development";
 
 const QUIZZES_COUNT = 10;
 const QUIZ_CATEGORY_MIN = 9;
@@ -89,7 +90,7 @@ export class QuizzesService implements OnDestroy {
   private getApiUrl(): string {
     const category = this.getUniqueCategory();
     const questionsCount = this.sharedService.getRandomNumber(QUIZ_ITEMS_MIN, QUIZ_ITEMS_MAX);
-    const apiUrl = `https://opentdb.com/api.php?amount=` + questionsCount + `&category=` + category + `&difficulty=easy`;
+    const apiUrl = environment.apiUrl + `?amount=` + questionsCount + `&category=` + category + `&difficulty=easy`;
     return apiUrl;
   }
 
