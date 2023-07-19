@@ -1,27 +1,62 @@
 # Quizzes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Quizzes is an application where you can answer questions and review your progress.
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project aims to provide an interactive quiz experience where users can play quizzes, view their progress, and explore statistics.
 
-## Code scaffolding
+The app leverages the [Open Trivia Database API](https://opentdb.com/api_config.php) to fetch random questions and dynamically generate quizzes. With a user-friendly interface and responsive design, the application caters to both mobile and desktop users. The Stats page offers insightful information about the number of quizzes played, total score, questions answered, and average quiz completion time. Additionally, the Stats page features a pie diagram showcasing the ratio of correct and incorrect answers.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Enjoy the engaging quizzes and track your progress with Quizzes!
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Fetching random questions from the data source and organizing them into quizzes
+- Loading spinner during data fetching
+- "I'm lucky" button to select a random quiz
+- Ability to answer questions and track progress
+- Progress bar and timer for each question
+- Canceling a quiz and returning to the Home page
+- Modal windows for confirming quit or clear statistics actions
+- Validation to prevent proceeding to the next question without selecting an answer
+- Guard to prevent navigation to quiz detail and quiz result pages through the browser's search bar
+- Displaying quiz results with statistics such as points earned, correct answers, questions with a minimum and maximum time, and total time taken
+- Stats page to view overall quiz performance, total score calculation, and average completion time
+- Saving statistics data to the Local Storage
+- Ability to clear statistics data
+- Pie diagram visualization of correct and incorrect answers on the Stats page
+- Lazy loading for feature modules
+- Preloading of lazy loaded code for improved performance
+- Styling using [Bootstrap 4](https://getbootstrap.com/) framework
+- Utilization of [Chart.js](https://www.chartjs.org/) library with the [ng2-charts](https://www.npmjs.com/package/ng2-charts) wrapper for Angular
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Configure the Open Trivia Database API settings in the application.
+4. Run `ng serve` to start the development server.
+5. Open the application in your browser. Navigate to `http://localhost:4200/`.
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Browse the Home page to view available quizzes.
+2. Click the "I'm lucky" button to select a random quiz or select a quiz from the list.
+3. Play the quiz by answering the questions within the time limit (60 sec per question).
+4. After answering the last question, view the quiz results on the Finish page.
+5. Explore the Stats page to see overall quiz performance and pie diagram visualization.
+6. Clear statistics data if needed.
 
-## Further help
+## Deployed Version
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A deployed version of this project can be found at https://goldenway.github.io/quizzes/
+
+## Technologies Used
+
+- Angular
+- TypeScript
+- Open Trivia Database API
+- Bootstrap 4
+- Chart.js
+- ng2-charts
